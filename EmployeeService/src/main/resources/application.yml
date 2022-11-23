@@ -1,0 +1,33 @@
+
+server:
+  port: 0
+
+
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://root:password123321@cluster0.oak4xda.mongodb.net/?retryWrites=true&w=majority
+      database: EmployeeService
+  application:
+    name: employee-service
+  mvc:
+    servlet:
+      path: /employee-service
+
+
+
+#spring:
+#  data:
+#    mongodb:
+#      uri: mongodb+srv://root:password123321@cluster0.oak4xda.mongodb.net/?retryWrites=true&w=majority
+#      database: EmployeeDB
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9000/eureka
