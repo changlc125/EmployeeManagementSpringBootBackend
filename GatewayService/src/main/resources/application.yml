@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: gateway-service
+
+  cloud:
+    gateway:
+      routes:
+        - id: application-service
+          uri: lb://application-service # service name
+          predicates:
+            - Path=/application-service/** # url pattern
+        - id: housing-service
+          uri: lb://housing-service
+          predicates:
+            - Path=/housing-service/**
+        - id: employee-service
+          uri: lb://employee-service
+          predicates:
+            - Path=/employee-service/**
+        - id: onboarding-service
+          uri: lb://onboarding-service
+          predicates:
+            - Path=/onboarding-service/**
+        - id: account-service
+          uri: lb://account-service
+          predicates:
+            - Path=/account-service/**
+
+server:
+  port: 8080
+
+#The Gateway will also be registered at the Eureka server
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9000/eureka
