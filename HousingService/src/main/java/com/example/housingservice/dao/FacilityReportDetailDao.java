@@ -1,6 +1,5 @@
 package com.example.housingservice.dao;
 
-import com.example.housingservice.domain.FacilityReport;
 import com.example.housingservice.domain.FacilityReportDetail;
 import org.springframework.stereotype.Repository;
 

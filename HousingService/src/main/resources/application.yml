@@ -10,7 +10,7 @@ spring:
   jpa:
     show-sql: true
     username: root
-    password: password
+    password: 12345678
     properties:
       hibernate:
         hbm2ddl:

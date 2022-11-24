@@ -3,7 +3,6 @@ package com.example.housingservice.service;
 import com.example.housingservice.dao.FacilityDao;
 import com.example.housingservice.domain.Facility;
 import com.example.housingservice.domain.House;
-import com.example.housingservice.domain.Landlord;
 import com.example.housingservice.domain.request.FacilityRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

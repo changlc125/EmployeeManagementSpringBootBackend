@@ -1,29 +1,22 @@
 package com.example.housingservice.config;
 
-import com.example.housingservice.domain.AwsSecrets;
-import com.google.gson.Gson;
+
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-import software.amazon.awssdk.auth.credentials.AwsCredentials;
-import software.amazon.awssdk.regions.Region;
-import software.amazon.awssdk.services.secretsmanager.SecretsManagerClient;
-import software.amazon.awssdk.services.secretsmanager.model.*;
+
 
 import javax.sql.DataSource;
-import java.security.InvalidParameterException;
-import java.util.Base64;
 import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath:application.yml")
 @ComponentScan(basePackages = {"com.example.housingservice"}) // Make sure this is correct
-public class AwsSecretsConfig {
+public class HibernateConfig {
     @Value("${spring.jpa.show-sql}")
     private String showsql;
 
