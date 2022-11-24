@@ -1,4 +1,3 @@
-
 server:
   port: 0
 
@@ -11,7 +10,7 @@ spring:
   jpa:
     show-sql: true
     username: root
-    password: 12345678
+    password: password
     properties:
       hibernate:
         hbm2ddl:

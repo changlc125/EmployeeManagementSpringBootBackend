@@ -10,7 +10,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-
+import software.amazon.awssdk.auth.credentials.AwsCredentials;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.secretsmanager.SecretsManagerClient;
+import software.amazon.awssdk.services.secretsmanager.model.*;
 
 import javax.sql.DataSource;
 import java.security.InvalidParameterException;
@@ -20,8 +23,7 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:application.yml")
 @ComponentScan(basePackages = {"com.example.housingservice"}) // Make sure this is correct
-public class DatabaseConfig {
-
+public class AwsSecretsConfig {
     @Value("${spring.jpa.show-sql}")
     private String showsql;
 
@@ -59,6 +61,7 @@ public class DatabaseConfig {
     @Bean
     public DataSource dataSource() {
 
+        // This is for testing on local machine
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(driver);
         dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/HousingDB");
