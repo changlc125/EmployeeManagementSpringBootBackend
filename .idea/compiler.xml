@@ -12,9 +12,11 @@
         <module name="EmailService" />
         <module name="EmployeeService" />
         <module name="GatewayService" />
+        <module name="ApplicationService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ApplicationService" target="1.8" />
       <module name="EmailService" target="1.8" />
       <module name="EmployeeService" target="1.8" />
       <module name="Eurka" target="1.8" />
@@ -25,6 +27,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApplicationService" options="-parameters" />
       <module name="EmailService" options="-parameters" />
       <module name="EmployeeService" options="-parameters" />
       <module name="Eurka" options="-parameters" />

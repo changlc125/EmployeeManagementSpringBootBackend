@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ApplicationService/ApplicationService.iml" filepath="$PROJECT_DIR$/ApplicationService/ApplicationService.iml" />
       <module fileurl="file://$PROJECT_DIR$/EmailService/EmailService.iml" filepath="$PROJECT_DIR$/EmailService/EmailService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/EmployeeManagementBackend.iml" filepath="$PROJECT_DIR$/.idea/EmployeeManagementBackend.iml" />
       <module fileurl="file://$PROJECT_DIR$/EmployeeService/EmployeeService.iml" filepath="$PROJECT_DIR$/EmployeeService/EmployeeService.iml" />
       <module fileurl="file://$PROJECT_DIR$/Eurka/Eurka.iml" filepath="$PROJECT_DIR$/Eurka/Eurka.iml" />
       <module fileurl="file://$PROJECT_DIR$/GatewayService/GatewayService.iml" filepath="$PROJECT_DIR$/GatewayService/GatewayService.iml" />
       <module fileurl="file://$PROJECT_DIR$/HousingService/HousingService.iml" filepath="$PROJECT_DIR$/HousingService/HousingService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnboardingService/OnboardingService.iml" filepath="$PROJECT_DIR$/OnboardingService/OnboardingService.iml" />
     </modules>
   </component>
 </project>

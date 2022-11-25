@@ -1,0 +1,30 @@
+server:
+  port: 0
+
+
+spring:
+  application:
+    name: application-service
+  mvc:
+    servlet:
+      path: /application-service
+  jpa:
+    show-sql: true
+    username: root
+    password: 12345678
+    properties:
+      hibernate:
+        hbm2ddl:
+          ddl-auto: update
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        connection:
+          driver_class: com.mysql.cj.jdbc.Driver
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9000/eureka
