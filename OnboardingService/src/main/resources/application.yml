@@ -7,6 +7,8 @@ spring:
   mvc:
     servlet:
       path: /onboarding-service
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
 
 eureka:
   instance:

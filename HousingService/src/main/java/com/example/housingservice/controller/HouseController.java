@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/houses")
-@Api(value = "houses RESTful endpoints")
+@Api(value = "House RESTful endpoints")
 public class HouseController {
     private HouseService houseService;
 

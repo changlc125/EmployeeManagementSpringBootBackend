@@ -7,6 +7,8 @@ spring:
   mvc:
     servlet:
       path: /housing-service
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
   jpa:
     show-sql: true
     username: root
@@ -27,3 +29,5 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:9000/eureka
+
+

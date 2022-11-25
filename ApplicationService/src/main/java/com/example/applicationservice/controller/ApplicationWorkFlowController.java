@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@Api(value = "Application RESTful endpoints")
+@Api(value = "Application workflow RESTful endpoints")
 public class ApplicationWorkFlowController {
     private final ApplicationWorkflowService applicationWorkflowService;
 

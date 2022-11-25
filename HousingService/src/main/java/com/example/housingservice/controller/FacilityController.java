@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/facilities")
-@Api(value = "facilities RESTful endpoints")
+@Api(value = "Facility RESTful endpoints")
 public class FacilityController {
     private FacilityService facilityService;
 

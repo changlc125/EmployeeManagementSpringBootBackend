@@ -8,6 +8,8 @@ spring:
   mvc:
     servlet:
       path: /application-service
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
   jpa:
     show-sql: true
     username: root

@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@Api(value = "onboarding RESTful endpoints")
+@Api(value = "Onboarding RESTful endpoints")
 public class OnboardingController {
     private OnboardingService onboardingService;
 
