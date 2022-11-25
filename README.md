@@ -12,3 +12,6 @@ http://localhost:8080/onboarding-service/swagger-ui.html#/onboarding-controller
 ![image](https://github.com/changlc125/EmployeeManagementSpringBootBackend/blob/main/screenshot/swagger-employee%20service.png)
 ![image](https://github.com/changlc125/EmployeeManagementSpringBootBackend/blob/main/screenshot/swagger-housing%20service.png)
 ![image](https://github.com/changlc125/EmployeeManagementSpringBootBackend/blob/main/screenshot/swagger-onboarding%20service.png)
+
+## more endpoint screenshot links:          
+https://github.com/changlc125/EmployeeManagementSpringBootBackend/tree/main/screenshot
