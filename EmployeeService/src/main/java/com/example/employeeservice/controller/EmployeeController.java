@@ -5,6 +5,8 @@ import com.example.employeeservice.domain.PersonalDocument;
 import com.example.employeeservice.service.EmployeeService;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
+@Api(value = "Employee RESTful endpoints")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
@@ -24,16 +27,14 @@ public class EmployeeController {
 
 
     @GetMapping(value = "/all-employees")
-//    @PreAuthorize("hasAuthority('read')")
+    @ApiOperation(value = "Find all employees", response = Iterable.class)
     public List<Employee> findAllEmployees() {
-
-
         return employeeService.findAllEmployees();
     }
 
     @DeleteMapping(value = "/all-employees")
-//    @PreAuthorize("hasAuthority('delete')")
     @ResponseBody
+    @ApiOperation(value = "Delete all employees", response = String.class)
     public String deleteAllEmployees()
     {
         employeeService.deleteAllAllEmployees();
@@ -42,8 +43,8 @@ public class EmployeeController {
 
     
     @PostMapping("/employee")
-//    @PreAuthorize("hasAuthority('write')")
     @ResponseBody
+    @ApiOperation(value = "Create a new employee", response = String.class)
     public String save(@RequestBody Employee employee) {
         employeeService.saveEmployee(employee);
         return "Successfully added an employee";
@@ -51,30 +52,18 @@ public class EmployeeController {
 
 
     @PutMapping( "/employee/{id}")
-//    @PreAuthorize("hasAuthority('update')")
     @ResponseBody
+    @ApiOperation(value = "Update an employee by employee ID completely", response = String.class)
     public String updateEmployee(@RequestBody Employee employee,@PathVariable String id)
     {
         employeeService.updateEmployee(employee,id);
         return "Successfully updated an employee";
     }
 
-    @PatchMapping ( "/employee-documents/{id}")
-//    @PreAuthorize("hasAuthority('update')")
-    @ResponseBody
-    public String updateDocuments(@RequestBody String documents, @PathVariable String id)
-    {
-        System.out.println(documents);
-        Gson gson = new Gson();
-        List<PersonalDocument> documentList = gson.fromJson(documents, new TypeToken<List<PersonalDocument>>(){}.
-                getType());
-        employeeService.updateDocuments(id,documentList);
-        return "Successfully uploaded documents";
-    }
 
     @DeleteMapping( "/employee/{id}")
-//    @PreAuthorize("hasAuthority('delete')")
     @ResponseBody
+    @ApiOperation(value = "Update an employee by employee ID partially", response = String.class)
     public String updateEmployee(@PathVariable String id)
     {
         employeeService.deleteEmployeeById(id);
@@ -83,7 +72,7 @@ public class EmployeeController {
 
     //find a employee by id
     @GetMapping( "/employee/{id}")
-//    @PreAuthorize("hasAuthority('read')")
+    @ApiOperation(value = "Find an employee by employee ID", response = Employee.class)
     public Employee getEmployeeByID(@PathVariable String id)
     {
         Optional<Employee> employee = employeeService.findEmployeeByID(id);
@@ -94,7 +83,7 @@ public class EmployeeController {
     }
 
     @GetMapping( "/employee_userId/{userId}")
-//    @PreAuthorize("hasAuthority('read')")
+    @ApiOperation(value = "Find an employee by User ID", response = Employee.class)
     public Employee getEmployeeByUserID(@PathVariable Integer userId)
     {
         Optional<Employee> employee = employeeService.findEmployeeByUserID(userId);
@@ -106,7 +95,7 @@ public class EmployeeController {
 
 
     @GetMapping( "/employee_houseId/{houseId}")
-//    @PreAuthorize("hasAuthority('read')")
+    @ApiOperation(value = "Find an employee by House ID", response = Iterable.class)
     public List<Employee> getEmployeesByHouseID(@PathVariable String houseId)
     {
         Optional<List<Employee>> employee = employeeService.findEmployeeByHouseId(houseId);
@@ -118,13 +107,13 @@ public class EmployeeController {
 
 
     @GetMapping("/employees/page/{page}")
-//    @PreAuthorize("hasAuthority('read')")
+    @ApiOperation(value = "Find two employees each page,we can specify which page", response = Iterable.class)
     public List<Employee> findTwoEmployeesByPage(@PathVariable int page) {
         return employeeService.findEmployeesByPage(page, 2);
     }
 
     @GetMapping("/employees/sort")
-//    @PreAuthorize("hasAuthority('read')")
+    @ApiOperation(value = "find all sorted employees", response = Iterable.class)
     public List<Employee> findEmployeesBySorting() {
         return employeeService.SortEmployeesByDefaultLastName();
     }
@@ -132,8 +121,8 @@ public class EmployeeController {
 
 
 
-    //get employees by their first name and last name;
     @GetMapping( "/employee-first-last-name")
+    @ApiOperation(value = "Find an employee by full name", response = Employee.class)
     public Employee getEmployeeByFirstNameAndLastName(@RequestParam("FirstName") String firstName
             ,@RequestParam("LastName") String lastName)
     {
@@ -148,6 +137,7 @@ public class EmployeeController {
 
     //get employees by their email
     @GetMapping( "/employee-email")
+    @ApiOperation(value = "Find an employee by email", response = Employee.class)
     public Employee getEmployeeByEmail(@RequestParam("email") String email)
     {
         return employeeService.findEmployeeByEmail(email).orElse(null);

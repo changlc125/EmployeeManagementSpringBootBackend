@@ -1,6 +1,5 @@
 package com.example.housingservice.service;
 
-import com.example.housingservice.dao.FacilityReportDetailDao;
 import com.example.housingservice.domain.FacilityReport;
 import com.example.housingservice.domain.FacilityReportDetail;
 import com.example.housingservice.domain.request.FacilityReportDetailRequest;
