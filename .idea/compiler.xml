@@ -13,6 +13,7 @@
         <module name="EmployeeService" />
         <module name="GatewayService" />
         <module name="ApplicationService" />
+        <module name="OnboardingService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +24,7 @@
       <module name="GatewayService" target="1.8" />
       <module name="HousingService" target="1.8" />
       <module name="HousingService1" target="17" />
+      <module name="OnboardingService" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -34,6 +36,7 @@
       <module name="GatewayService" options="-parameters" />
       <module name="HousingService" options="-parameters" />
       <module name="HousingService1" options="-parameters" />
+      <module name="OnboardingService" options="-parameters" />
     </option>
   </component>
 </project>

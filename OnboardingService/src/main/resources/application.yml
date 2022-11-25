@@ -1,0 +1,18 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: onboarding-service
+  mvc:
+    servlet:
+      path: /onboarding-service
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9000/eureka
