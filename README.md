@@ -1,4 +1,8 @@
-# EmployeeManagementSpringBootBackend
+# EmployeeManagementSpringBootBackend        
+###I built RESTful Web Services in the Microservices architecture using SpringBoot for the backend without fontend.
+I created endpoints related employee service(core service), housing service(core service), application service(core service) and onBoarding service(composite service) to simulate the new employee onboarding process.     
+Employees will be able to update personal information, and monitor their housing situation through endpoints.
+
 ## Microservice Architecture
 ![image](https://github.com/changlc125/EmployeeManagementSpringBootBackend/blob/main/screenshot/microservice%20architecture.png)
 ![image](https://github.com/changlc125/EmployeeManagementSpringBootBackend/blob/main/screenshot/running%20application.png)
