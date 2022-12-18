@@ -5,7 +5,7 @@ I created endpoints related employee service(core service), housing service(core
 Employees will be able to update personal information, and monitor their housing situation through endpoints.     
 
 ## Microservice Architecture
-![image](https://github.com/changlc125/EmployeeManagementSpringBootBackend/blob/main/screenshot/microservice%20architecture.png)
+![image](https://github.com/changlc125/EmployeeManagementSpringBootBackend/blob/main/screenshot/microservice-architechture.png)
 ![image](https://github.com/changlc125/EmployeeManagementSpringBootBackend/blob/main/screenshot/running%20application.png)
 
 ##Swagger URLs       
